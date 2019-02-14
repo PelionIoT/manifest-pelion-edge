@@ -8,6 +8,12 @@
     <remote name="yocto" fetch="git://git.yoctoproject.org" />
     <remote name="oe" fetch="git://git.openembedded.org" />
 
+    <!-- build scripts -->
+    <project name="armmbed/wigwag-build-env"
+        path="build-env"
+        revision="master"
+        remote="github" />
+
     <!-- yocto core -->
     <project name="poky"
         path="poky"
