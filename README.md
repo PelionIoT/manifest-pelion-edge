@@ -2,6 +2,14 @@ Repo manifest for WW gateway
 =============================================
 This repository provides Repo manifests to setup the Yocto build system for the WW gateway.
 
+Quickstart
+----------
+    $ mkdir build; cd build
+    $ repo init -u ssh://git@github.com/armmbed/manifest-gateway-ww.git
+    $ repo sync -j8
+    $ cd build-env
+    $ make
+
 Getting Started
 ---------------
 **1.  Install Repo.**
@@ -28,15 +36,12 @@ Your directory should now contain a .repo directory.
 
 **3.  Fetch all the repositories:**
 
-    $ repo sync
-
-**4.  Initialize the build environment.**
-
-    $ source ./poky/oe-init-build-env
+    $ repo sync -j8
 
 **5.  Build an image:**
 
-    $ bitbake console-image
+    $ cd build-env
+    $ make
 
 **6. Flash your image:**
 
