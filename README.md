@@ -49,7 +49,7 @@ Manual Steps:
     a. [Install Yocto system requirements](https://www.yoctoproject.org/docs/2.6.1/ref-manual/ref-manual.html#ref-manual-system-requirements)
     b. run bitbake
     $ cd poky
-    $ TEMPLATECONF=metagateway-ww/conf source oe-init-build-env
+    $ TEMPLATECONF=meta-gateway-ww/conf source oe-init-build-env
     $ bitbake console-image
 
 With Docker and Make:
