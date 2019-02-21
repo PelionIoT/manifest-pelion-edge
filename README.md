@@ -68,3 +68,7 @@ Be sure to install `bmap-tools`:
 Flash SD:
 
     $ sudo bmaptool copy --bmap image.bmap build/console-image.wiz.gz /dev/sdb
+
+Troubleshooting
+---------------
+1. See the wigwag-build-env [README](https://github.com/ARMmbed/wigwag-build-env/blob/master/README.md) for solutions to some common build errors.
