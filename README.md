@@ -5,7 +5,7 @@ This repository provides Repo manifests to setup the Yocto build system for the 
 Quickstart
 ----------
     $ mkdir build; cd build
-    $ repo init -u ssh://git@github.com/armmbed/manifest-gateway-ww.git
+    $ repo init -u ssh://git@github.com/armmbed/manifest-gateway-ww.git -b <branch>
     $ repo sync -j8
     $ cd build-env
     $ make
