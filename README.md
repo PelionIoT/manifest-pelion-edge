@@ -59,6 +59,8 @@ With Docker and Make:
     $ cd build-env
     $ make
 
+The built image will be located in the build directory (`gateway-ww-build` in this example), under `poky/build/tmp/deploy/images/raspberrypi3/`. The file name will be `console-image-raspberry3.SOMETHING` (the ending will vary based on the value of IMAGE_FSTYPES in your local.conf).
+
 **6. Flash your image:**
 
 Be sure to install `bmap-tools`:
