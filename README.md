@@ -63,13 +63,10 @@ The built image will be located in the build directory (`gateway-ww-build` in th
 
 **6. Flash your image:**
 
-Be sure to install `bmap-tools`:
+To flash console-image-raspberry3.wic:
 
-    $ sudo apt-get install bmap-tools
-
-Flash SD:
-
-    $ sudo bmaptool copy --bmap image.bmap build/console-image.wiz.gz /dev/sdb
+    To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as /dev/diskX and you should verify your device's path.
+        $ sudo dd bs=4m if=console-image-raspberrypi3.wic of=/dev/diskX conv=sync
 
 Troubleshooting
 ---------------
