@@ -65,8 +65,11 @@ The built image will be located in the build directory (`gateway-ww-build` in th
 
 To flash console-image-raspberry3.wic:
 
-    To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as /dev/diskX and you should verify your device's path.
+To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as /dev/diskX and you should verify your device's path.
+
         $ sudo dd bs=4m if=console-image-raspberrypi3.wic of=/dev/diskX conv=sync
+
+Alternatively, you can use the [Etcher](https://www.balena.io/etcher/) app (the UI is self explanatory - simply choose the file to flash, the destination SD card, and then click Flash). In some cases, using Etcher results in significant time savings over using dd.
 
 Troubleshooting
 ---------------
