@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
     <!-- defaults for entries that haven't specified all required fields-->
-    <default revision="thud" />
+    <default revision="dev" />
 
     <!-- remotes -->
     <remote name="github" fetch="ssh://git@github.com/" />
@@ -11,29 +11,33 @@
     <!-- build scripts -->
     <project name="armmbed/wigwag-build-env"
         path="build-env"
-        revision="master"
         remote="github" />
 
     <!-- yocto core -->
     <project name="poky"
         path="poky"
+        revision="thud"
         remote="yocto" />
 
     <project name="meta-openembedded"
         path="poky/meta-openembedded"
+        revision="thud"
         remote="oe" />
 
     <project name="meta-virtualization"
         path="poky/meta-virtualization"
+        revision="thud"
         remote="yocto" />
 
     <project name="meta-security"
         path="poky/meta-security"
+        revision="thud"
         remote="yocto" />
 
     <!-- bsps -->
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
+        revision="thud"
         remote="yocto" />
 
     <!-- distros -->
@@ -41,7 +45,6 @@
     <!-- software -->
     <project name="armmbed/meta-gateway-ww"
         path="poky/meta-gateway-ww"
-        revision="master"
         remote="github" />
 
     <project name="aaronovz1/meta-nodejs"

@@ -5,7 +5,7 @@ This repository provides Repo manifests to setup the Yocto build system for the 
 Quickstart
 ----------
     $ mkdir build; cd build
-    $ repo init -u ssh://git@github.com/armmbed/manifest-gateway-ww.git
+    $ repo init -u ssh://git@github.com/armmbed/manifest-gateway-ww.git -b <branch>
     $ repo sync -j8
     $ cd build-env
     $ make
@@ -63,10 +63,11 @@ The built image will be located in the build directory (`gateway-ww-build` in th
 
 **6. Flash your image:**
 
-Be sure to install `bmap-tools`:
+To flash console-image-raspberry3.wic:
 
-    $ sudo apt-get install bmap-tools
+    To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as /dev/diskX and you should verify your device's path.
+        $ sudo dd bs=4m if=console-image-raspberrypi3.wic of=/dev/diskX conv=sync
 
-Flash SD:
-
-    $ sudo bmaptool copy --bmap image.bmap build/console-image.wiz.gz /dev/sdb
+Troubleshooting
+---------------
+1. See the wigwag-build-env [README](https://github.com/ARMmbed/wigwag-build-env/blob/master/README.md) for solutions to some common build errors.
