@@ -8,6 +8,7 @@ Quickstart
     $ repo init -u ssh://git@github.com/armmbed/manifest-gateway-ww.git -b <branch>
     $ repo sync -j8
     $ cd build-env
+    $ cp <path_to_file>/mbed_cloud_dev_credentials.c .
     $ make
 
 Getting Started
@@ -50,6 +51,7 @@ Manual Steps:
     b. run bitbake
     $ cd poky
     $ TEMPLATECONF=meta-gateway-ww/conf source oe-init-build-env
+    $ cp <path_to_file>/mbed_cloud_dev_credentials.c meta-gateway-ww/recipes-wigwag/mbed-edge-core/files/
     $ bitbake console-image
 
 With Docker and Make:
@@ -57,6 +59,7 @@ With Docker and Make:
     a. [Install Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
     b. run make
     $ cd build-env
+    $ cp <path_to_file>/mbed_cloud_dev_credentials.c .
     $ make
 
 The built image will be located in the build directory (`gateway-ww-build` in this example), under `poky/build/tmp/deploy/images/raspberrypi3/`. The file name will be `console-image-raspberry3.SOMETHING` (the ending will vary based on the value of IMAGE_FSTYPES in your local.conf).
