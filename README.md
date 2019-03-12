@@ -74,6 +74,12 @@ To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as
 
 Alternatively, you can use the [Etcher](https://www.balena.io/etcher/) app (the UI is self explanatory - simply choose the file to flash, the destination SD card, and then click Flash). In some cases, using Etcher results in significant time savings over using dd.
 
+To flash console-image-raspberry3.wic.gz:
+
+To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as /dev/diskX and you should verify your device's path.
+
+        $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd of=/dev/diskX bs=4M  iflag=fullblock oflag=direct conv=fsync status=progress
+
 Troubleshooting
 ---------------
 1. See the wigwag-build-env [README](https://github.com/ARMmbed/wigwag-build-env/blob/master/README.md) for solutions to some common build errors.
