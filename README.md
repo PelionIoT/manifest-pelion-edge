@@ -48,7 +48,11 @@ There's no magic in the Docker image or the Makefile, rather it implements a kno
 Manual Steps:
 
     a. [Install Yocto system requirements](https://www.yoctoproject.org/docs/2.6.1/ref-manual/ref-manual.html#ref-manual-system-requirements)
-    b. run bitbake
+    b. [Install additional requirements]
+       1. sudo dpkg --add-architecture i386
+       2. sudo apt-get update
+       3. sudo apt-get install -y --no-install-recommends g++-multilib libssl-dev:i386 libcrypto++-dev:i386 zlib1g-dev:i386
+    c. run bitbake
     $ cd poky
     $ TEMPLATECONF=meta-gateway-ww/conf source oe-init-build-env
     $ cp <path_to_file>/mbed_cloud_dev_credentials.c meta-gateway-ww/recipes-wigwag/mbed-edge-core/files/
