@@ -52,6 +52,8 @@ Manual Steps:
        1. sudo dpkg --add-architecture i386
        2. sudo apt-get update
        3. sudo apt-get install -y --no-install-recommends g++-multilib libssl-dev:i386 libcrypto++-dev:i386 zlib1g-dev:i386
+       4. sudo dpkg-reconfigure dash
+          i.  This reconfigures Ubuntu/Debian to use bash as the non-interactive shell.  At the prompt, select No.
     c. run bitbake
     $ cd poky
     $ TEMPLATECONF=meta-gateway-ww/conf source oe-init-build-env
