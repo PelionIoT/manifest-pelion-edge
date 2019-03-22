@@ -80,6 +80,10 @@ To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as
 
 Alternatively, you can use the [Etcher](https://www.balena.io/etcher/) app (the UI is self explanatory - simply choose the file to flash, the destination SD card, and then click Flash). In some cases, using Etcher results in significant time savings over using dd.
 
+To flash on Linux, use dd.  You can use `lsblk` to find out the name of your SD card block device.
+
+        $ sudo dd bs=4m if=console-image-raspberrypi3.wic of=/dev/mmcblkX conv=sync
+
 Troubleshooting
 ---------------
 1. See the wigwag-build-env [README](https://github.com/ARMmbed/wigwag-build-env/blob/master/README.md) for solutions to some common build errors.
