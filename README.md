@@ -48,7 +48,13 @@ There's no magic in the Docker image or the Makefile, rather it implements a kno
 Manual Steps:
 
     a. [Install Yocto system requirements](https://www.yoctoproject.org/docs/2.6.1/ref-manual/ref-manual.html#ref-manual-system-requirements)
-    b. run bitbake
+    b. [Install additional requirements]
+       1. sudo dpkg --add-architecture i386
+       2. sudo apt-get update
+       3. sudo apt-get install -y --no-install-recommends g++-multilib libssl-dev:i386 libcrypto++-dev:i386 zlib1g-dev:i386
+       4. sudo dpkg-reconfigure dash
+          i.  This reconfigures Ubuntu/Debian to use bash as the non-interactive shell.  At the prompt, select No.
+    c. run bitbake
     $ cd poky
     $ TEMPLATECONF=meta-gateway-ww/conf source oe-init-build-env
     $ cp <path_to_file>/mbed_cloud_dev_credentials.c meta-gateway-ww/recipes-wigwag/mbed-edge-core/files/
@@ -70,15 +76,14 @@ To flash console-image-raspberry3.wic:
 
 To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as /dev/diskX and you should verify your device's path.
 
-        $ sudo dd bs=4m if=console-image-raspberrypi3.wic of=/dev/diskX conv=sync
+        $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4m of=/dev/diskX iflag=fullblock oflag=direct conv=fsync status=progress
 
 Alternatively, you can use the [Etcher](https://www.balena.io/etcher/) app (the UI is self explanatory - simply choose the file to flash, the destination SD card, and then click Flash). In some cases, using Etcher results in significant time savings over using dd.
 
-To flash console-image-raspberry3.wic.gz:
+To flash on Linux, use dd.  You can use `lsblk` to find out the name of your SD card block device.
 
-To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as /dev/diskX and you should verify your device's path.
+        $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4M of=/dev/mmcblkX conv=sync
 
-        $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd of=/dev/diskX bs=4M  iflag=fullblock oflag=direct conv=fsync status=progress
 
 Troubleshooting
 ---------------
