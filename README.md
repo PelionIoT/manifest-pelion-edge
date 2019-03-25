@@ -76,13 +76,14 @@ To flash console-image-raspberry3.wic:
 
 To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as /dev/diskX and you should verify your device's path.
 
-        $ sudo dd bs=4m if=console-image-raspberrypi3.wic of=/dev/diskX conv=sync
+        $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4m of=/dev/diskX iflag=fullblock oflag=direct conv=fsync status=progress
 
 Alternatively, you can use the [Etcher](https://www.balena.io/etcher/) app (the UI is self explanatory - simply choose the file to flash, the destination SD card, and then click Flash). In some cases, using Etcher results in significant time savings over using dd.
 
 To flash on Linux, use dd.  You can use `lsblk` to find out the name of your SD card block device.
 
-        $ sudo dd bs=4M if=console-image-raspberrypi3.wic of=/dev/mmcblkX conv=sync
+        $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4M of=/dev/mmcblkX conv=sync
+
 
 Troubleshooting
 ---------------
