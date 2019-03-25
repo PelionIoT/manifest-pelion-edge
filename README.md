@@ -9,6 +9,7 @@ Quickstart
     $ repo sync -j8
     $ cd build-env
     $ cp <path_to_file>/mbed_cloud_dev_credentials.c .
+    $ cp <upgrade_CA_certificate> ./upgradeCA.cert
     $ make
 
 Getting Started
@@ -58,6 +59,7 @@ Manual Steps:
     $ cd poky
     $ TEMPLATECONF=meta-gateway-ww/conf source oe-init-build-env
     $ cp <path_to_file>/mbed_cloud_dev_credentials.c meta-gateway-ww/recipes-wigwag/mbed-edge-core/files/
+    $ cp <upgrade_CA_certificate> meta-gateway-ww/recipers-core/ww-console-image-initramfs-inti/files/upgradeCA.cert
     $ bitbake console-image
 
 With Docker and Make:
@@ -66,6 +68,7 @@ With Docker and Make:
     b. run make
     $ cd build-env
     $ cp <path_to_file>/mbed_cloud_dev_credentials.c .
+    $ cp <upgrade_CA_certificate> ./upgradeCA.cert
     $ make
 
 The built image will be located in the build directory (`gateway-ww-build` in this example), under `poky/build/tmp/deploy/images/raspberrypi3/`. The file name will be `console-image-raspberry3.SOMETHING` (the ending will vary based on the value of IMAGE_FSTYPES in your local.conf).
