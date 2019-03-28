@@ -1,6 +1,6 @@
-Repo manifest for WW gateway
+Repo manifest for Pelion gateway
 =============================================
-This repository provides Repo manifests to setup the Yocto build system for the WW gateway.
+This repository provides Repo manifests to setup the Yocto build system for the Pelion gateway.
 
 Quickstart
 ----------
@@ -8,9 +8,7 @@ Quickstart
     $ repo init -u ssh://git@github.com/armmbed/manifest-gateway-ww.git -b <branch>
     $ repo sync -j8
     $ cd build-env
-    $ cp <path_to_file>/mbed_cloud_dev_credentials.c .
-    $ cp <upgrade_CA_certificate> ./upgradeCA.cert
-    $ make
+    Follow the [automated build instructions](https://github.com/ARMmbed/wigwag-build-env) of the build environment repository.
 
 Getting Started
 ---------------
@@ -40,52 +38,21 @@ Your directory should now contain a .repo directory.
 
     $ repo sync -j8
 
-**5.  Build an image:**
+**4.  Build an image:**
 
-There are two ways to build the image depending on how much manual effort and time you want to invest: 1. by manually setting up your host environment for Yocto and calling the usual bitbake commands, or 2. installing Docker and using the included Makefile which loads a Docker image and runs bitbake inside the Docker image.  Beyond the automation, an additional benefit of 2 is that the Docker image contains a known working host environment with all the necessary build tools preinstalled.
+There are two ways to build the image depending on how much manual effort and time you want to invest.
 
-There's no magic in the Docker image or the Makefile, rather it implements a known working environment and scripted set of build steps to produce a viable firmware image.  The Makefile still calls bitbake to perform the build, it just does so inside the Docker container.
+ 1. By manually setting up your host environment for Yocto and calling the usual bitbake commands.  Those instructions are located [here](https://github.com/ARMmbed/meta-gateway-ww/blob/master/BUILD.md). 
+ or 
+ 2. Installing Docker and using the included build-env/Makefile which loads a Docker image and runs bitbake inside the Docker image. Those instructions are located [here](https://github.com/ARMmbed/wigwag-build-env). 
 
-Manual Steps:
+ Beyond the automation, an additional benefit of 2 is that the Docker image contains a known working host environment with all the necessary build tools preinstalled. There's no magic in the Docker image or the Makefile, rather it implements a known working environment and scripted set of build steps to produce a viable firmware image.  The Makefile still calls bitbake to perform the build, it just does so inside the Docker container.
 
-    a. [Install Yocto system requirements](https://www.yoctoproject.org/docs/2.6.1/ref-manual/ref-manual.html#ref-manual-system-requirements)
-    b. [Install additional requirements]
-       1. sudo dpkg --add-architecture i386
-       2. sudo apt-get update
-       3. sudo apt-get install -y --no-install-recommends g++-multilib libssl-dev:i386 libcrypto++-dev:i386 zlib1g-dev:i386
-       4. sudo dpkg-reconfigure dash
-          i.  This reconfigures Ubuntu/Debian to use bash as the non-interactive shell.  At the prompt, select No.
-    c. run bitbake
-    $ cd poky
-    $ TEMPLATECONF=meta-gateway-ww/conf source oe-init-build-env
-    $ cp <path_to_file>/mbed_cloud_dev_credentials.c meta-gateway-ww/recipes-wigwag/mbed-edge-core/files/
-    $ cp <upgrade_CA_certificate> meta-gateway-ww/recipers-core/ww-console-image-initramfs-inti/files/upgradeCA.cert
-    $ bitbake console-image
 
-With Docker and Make:
+**5. Flash your image:**
 
-    a. [Install Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-    b. run make
-    $ cd build-env
-    $ cp <path_to_file>/mbed_cloud_dev_credentials.c .
-    $ cp <upgrade_CA_certificate> ./upgradeCA.cert
-    $ make
+Instructions for flashing the image to an SD card can be found [here](https://github.com/ARMmbed/meta-gateway-ww/blob/master/FLASH.md).
 
-The built image will be located in the build directory (`gateway-ww-build` in this example), under `poky/build/tmp/deploy/images/raspberrypi3/`. The file name will be `console-image-raspberry3.SOMETHING` (the ending will vary based on the value of IMAGE_FSTYPES in your local.conf).
-
-**6. Flash your image:**
-
-To flash console-image-raspberry3.wic:
-
-To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as /dev/diskX and you should verify your device's path.
-
-        $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4m of=/dev/diskX iflag=fullblock oflag=direct conv=fsync status=progress
-
-Alternatively, you can use the [Etcher](https://www.balena.io/etcher/) app (the UI is self explanatory - simply choose the file to flash, the destination SD card, and then click Flash). In some cases, using Etcher results in significant time savings over using dd.
-
-To flash on Linux, use dd.  You can use `lsblk` to find out the name of your SD card block device.
-
-        $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4M of=/dev/mmcblkX conv=sync
 
 
 Troubleshooting
