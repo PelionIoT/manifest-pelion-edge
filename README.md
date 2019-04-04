@@ -8,7 +8,7 @@ Quickstart
     $ repo init -u ssh://git@github.com/armmbed/manifest-gateway-ww.git -b <branch>
     $ repo sync -j8
     $ cd build-env
-    Follow the [automated build instructions](https://github.com/ARMmbed/wigwag-build-env) of the build environment repository.
+Follow the [automated build instructions](https://github.com/ARMmbed/wigwag-build-env) of the build environment repository.
 
 Getting Started
 ---------------
