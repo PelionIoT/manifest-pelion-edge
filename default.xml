@@ -9,7 +9,7 @@
     <remote name="oe" fetch="git://git.openembedded.org" />
 
     <!-- build scripts -->
-    <project name="armmbed/wigwag-build-env"
+    <project name="armpelionedge/build-pelion-os-edge"
         path="build-env"
         remote="github" />
 
@@ -43,8 +43,8 @@
     <!-- distros -->
 
     <!-- software -->
-    <project name="armmbed/meta-gateway-ww"
-        path="poky/meta-gateway-ww"
+    <project name="armpelionedge/meta-pelion-os-edge"
+        path="poky/meta-pelion-os-edge"
         remote="github" />
 
     <project name="aaronovz1/meta-nodejs"
