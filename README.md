@@ -1,11 +1,11 @@
-Repo manifest for WW gateway
+Repo manifest for Pelion OS Edge
 =============================================
-This repository provides Repo manifests to setup the Yocto build system for the WW gateway.
+This repository provides Repo manifests to setup the Yocto build system for the Pelion OS Edge.
 
 Quickstart
 ----------
     $ mkdir build; cd build
-    $ repo init -u ssh://git@github.com/armmbed/manifest-gateway-ww.git -b <branch>
+    $ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-os-edge.git -b <branch>
     $ repo sync -j8
     $ cd build-env
     $ cp <path_to_file>/mbed_cloud_dev_credentials.c .
@@ -26,12 +26,12 @@ Download the Repo script:
 
 Create an empty directory to hold the build directory:
 
-    $ mkdir gateway-ww-build
-    $ cd gateway-ww-build
+    $ mkdir build
+    $ cd build
 
 Tell Repo to download the manifest in this repo:
 
-    $ repo init -u ssh://git@github.com/armmbed/manifest-gateway-ww.git
+    $ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-os-edge.git
 
 Your directory should now contain a .repo directory.
 
@@ -56,8 +56,8 @@ Manual Steps:
           i.  This reconfigures Ubuntu/Debian to use bash as the non-interactive shell.  At the prompt, select No.
     c. run bitbake
     $ cd poky
-    $ TEMPLATECONF=meta-gateway-ww/conf source oe-init-build-env
-    $ cp <path_to_file>/mbed_cloud_dev_credentials.c meta-gateway-ww/recipes-wigwag/mbed-edge-core/files/
+    $ TEMPLATECONF=meta-pelion-os-edge/conf source oe-init-build-env
+    $ cp <path_to_file>/mbed_cloud_dev_credentials.c meta-pelion-os-edge/recipes-wigwag/mbed-edge-core/files/
     $ bitbake console-image
 
 With Docker and Make:
@@ -68,7 +68,7 @@ With Docker and Make:
     $ cp <path_to_file>/mbed_cloud_dev_credentials.c .
     $ make
 
-The built image will be located in the build directory (`gateway-ww-build` in this example), under `poky/build/tmp/deploy/images/raspberrypi3/`. The file name will be `console-image-raspberry3.SOMETHING` (the ending will vary based on the value of IMAGE_FSTYPES in your local.conf).
+The built image will be located in the build directory (`build` in this example), under `poky/build/tmp/deploy/images/raspberrypi3/`. The file name will be `console-image-raspberry3.SOMETHING` (the ending will vary based on the value of IMAGE_FSTYPES in your local.conf).
 
 **6. Flash your image:**
 
@@ -87,4 +87,4 @@ To flash on Linux, use dd.  You can use `lsblk` to find out the name of your SD 
 
 Troubleshooting
 ---------------
-1. See the wigwag-build-env [README](https://github.com/ARMmbed/wigwag-build-env/blob/master/README.md) for solutions to some common build errors.
+1. See the build-pelion-os-edge [README](https://github.com/armpelionedge/build-pelion-os-edge/blob/master/README.md) for solutions to some common build errors.
