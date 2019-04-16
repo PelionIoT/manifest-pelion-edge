@@ -7,6 +7,7 @@
     <remote name="github" fetch="ssh://git@github.com/" />
     <remote name="yocto" fetch="git://git.yoctoproject.org" />
     <remote name="oe" fetch="git://git.openembedded.org" />
+    <remote name="linaro" fetch="http://git.linaro.org" />
 
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-os-edge"
@@ -18,6 +19,11 @@
         path="poky"
         revision="thud"
         remote="yocto" />
+j
+    <project name="armPelionEdge/openembedded-core-mbl"
+        path="poky/openembedded-core-mbl"
+        revision="verified-boot"
+        remote="github" />
 
     <project name="meta-openembedded"
         path="poky/meta-openembedded"
@@ -40,12 +46,32 @@
         revision="thud"
         remote="yocto" />
 
+    <project name="armPelionEdge/meta-raspberrypi-mbl"
+        path="poky/meta-raspberrypi-mbl"
+        revision="verified-boot"
+        remote="github" />
+
+    <project name="armPelionEdge/meta-mbl-bsp-common"
+        path="poky/meta-mbl-bsp-common"
+        revision="verified-boot"
+        remote="github" />
+
     <!-- distros -->
 
     <!-- software -->
     <project name="armpelionedge/meta-pelion-os-edge"
         path="poky/meta-pelion-os-edge"
         remote="github" />
+
+    <project name="openembedded/meta-linaro"
+        path="poky/meta-linaro"
+        remote="linaro"
+        revision="thud" />
+
+    <project name="armPelionEdge/meta-linaro-mbl"
+        path="poky/meta-linaro-mbl"
+        remote="github"
+        revision="verified-boot" />
 
     <project name="aaronovz1/meta-nodejs"
         path="poky/meta-nodejs"
