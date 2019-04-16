@@ -19,7 +19,7 @@
         path="poky"
         revision="thud"
         remote="yocto" />
-j
+
     <project name="armPelionEdge/openembedded-core-mbl"
         path="poky/openembedded-core-mbl"
         revision="verified-boot"
