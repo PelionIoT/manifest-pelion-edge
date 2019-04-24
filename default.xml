@@ -22,7 +22,7 @@
 
     <project name="armPelionEdge/openembedded-core-mbl"
         path="poky/openembedded-core-mbl"
-        revision="verified-boot"
+        revision="dev"
         remote="github" />
 
     <project name="meta-openembedded"
@@ -48,12 +48,12 @@
 
     <project name="armPelionEdge/meta-raspberrypi-mbl"
         path="poky/meta-raspberrypi-mbl"
-        revision="verified-boot"
+        revision="dev"
         remote="github" />
 
     <project name="armPelionEdge/meta-mbl-bsp-common"
         path="poky/meta-mbl-bsp-common"
-        revision="verified-boot"
+        revision="dev"
         remote="github" />
 
     <!-- distros -->
@@ -71,7 +71,7 @@
     <project name="armPelionEdge/meta-linaro-mbl"
         path="poky/meta-linaro-mbl"
         remote="github"
-        revision="verified-boot" />
+        revision="dev" />
 
     <project name="aaronovz1/meta-nodejs"
         path="poky/meta-nodejs"
