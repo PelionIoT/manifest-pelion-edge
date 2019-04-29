@@ -20,11 +20,6 @@
         revision="thud"
         remote="yocto" />
 
-    <project name="armPelionEdge/openembedded-core-mbl"
-        path="poky/openembedded-core-mbl"
-        revision="dev"
-        remote="github" />
-
     <project name="meta-openembedded"
         path="poky/meta-openembedded"
         revision="thud"
@@ -46,16 +41,10 @@
         revision="thud"
         remote="yocto" />
 
-    <project name="armPelionEdge/meta-raspberrypi-mbl"
-        path="poky/meta-raspberrypi-mbl"
-        revision="dev"
-        remote="github" />
-
-    <project name="armPelionEdge/meta-mbl-bsp-common"
-        path="poky/meta-mbl-bsp-common"
-        revision="dev"
-        remote="github" />
-
+    <project name="armmbed/meta-mbl"
+        path="poky/meta-mbl"
+        remote="github"
+        revision="thud-gateway-bsp" />
     <!-- distros -->
 
     <!-- software -->
@@ -67,11 +56,6 @@
         path="poky/meta-linaro"
         remote="linaro"
         revision="thud" />
-
-    <project name="armPelionEdge/meta-linaro-mbl"
-        path="poky/meta-linaro-mbl"
-        remote="github"
-        revision="dev" />
 
     <project name="aaronovz1/meta-nodejs"
         path="poky/meta-nodejs"
