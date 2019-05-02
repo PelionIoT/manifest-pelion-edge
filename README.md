@@ -42,7 +42,7 @@ Your directory should now contain a .repo directory.
 
 There are two ways to build the image depending on how much manual effort and time you want to invest.
 
- 1. By manually setting up your host environment for Yocto and calling the usual bitbake commands.  Those instructions are located [here](https://github.com/armpelionedge/meta-pelion-os-edge/blob/master/BUILD.md). 
+ 1. By manually setting up your host environment for Yocto and calling the usual bitbake commands.  Those instructions are located [here](https://github.com/armPelionEdge/meta-pelion-os-edge/blob/dev/BUILD.md). 
  or 
  2. Installing Docker and using the included build-env/Makefile which loads a Docker image and runs bitbake inside the Docker image. Those instructions are located [here](https://github.com/armpelionedge/build-pelion-os-edge). 
 
