@@ -44,8 +44,8 @@
     <!-- distros -->
 
     <!-- software -->
-    <project name="armpelionedge/meta-pelion-os-edge"
-        path="poky/meta-pelion-os-edge"
+    <project name="armpelionedge/meta-pelion-edge"
+        path="poky/meta-pelion-edge"
         revision="refs/tags/1.0.0-rc4"
         remote="github" />
 
