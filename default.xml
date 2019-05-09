@@ -10,7 +10,7 @@
     <remote name="linaro" fetch="http://git.linaro.org" />
 
     <!-- build scripts -->
-    <project name="armpelionedge/build-pelion-os-edge"
+    <project name="armpelionedge/build-pelion-edge"
         path="build-env"
         remote="github" />
 
@@ -48,8 +48,8 @@
     <!-- distros -->
 
     <!-- software -->
-    <project name="armpelionedge/meta-pelion-os-edge"
-        path="poky/meta-pelion-os-edge"
+    <project name="armpelionedge/meta-pelion-edge"
+        path="poky/meta-pelion-edge"
         remote="github" />
 
     <project name="openembedded/meta-linaro"
