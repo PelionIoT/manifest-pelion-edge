@@ -9,7 +9,7 @@
     <remote name="oe" fetch="git://git.openembedded.org" />
 
     <!-- build scripts -->
-    <project name="armpelionedge/build-pelion-os-edge"
+    <project name="armpelionedge/build-pelion-edge"
         path="build-env"
         revision="refs/tags/1.0.0-rc4"
         remote="github" />
@@ -44,8 +44,8 @@
     <!-- distros -->
 
     <!-- software -->
-    <project name="armpelionedge/meta-pelion-os-edge"
-        path="poky/meta-pelion-os-edge"
+    <project name="armpelionedge/meta-pelion-edge"
+        path="poky/meta-pelion-edge"
         revision="refs/tags/1.0.0-rc4"
         remote="github" />
 
