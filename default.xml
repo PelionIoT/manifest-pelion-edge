@@ -11,7 +11,7 @@
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-os-edge"
         path="build-env"
-        revision="refs/tags/1.0.0-rc2"
+        revision="refs/tags/1.0.0-rc3"
         remote="github" />
 
     <!-- yocto core -->
@@ -46,7 +46,7 @@
     <!-- software -->
     <project name="armpelionedge/meta-pelion-os-edge"
         path="poky/meta-pelion-os-edge"
-        revision="refs/tags/1.0.0-rc2"
+        revision="refs/tags/1.0.0-rc3"
         remote="github" />
 
     <project name="aaronovz1/meta-nodejs"
