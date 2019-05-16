@@ -1,11 +1,11 @@
-Repo manifest for Pelion OS Edge
+Repo manifest for Pelion Edge
 =============================================
-This repository provides Repo manifests to setup the Yocto build system for the Pelion OS Edge.
+This repository provides Repo manifests to setup the Yocto build system for the Pelion Edge.
 
 Quickstart
 ----------
     $ mkdir build; cd build
-    $ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-os-edge.git -b <branch>
+    $ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-edge.git -b <branch>
     $ repo sync -j8
     $ cd build-env
     $ cp <path_to_file>/mbed_cloud_dev_credentials.c .
@@ -31,7 +31,7 @@ Create an empty directory to hold the build directory:
 
 Tell Repo to download the manifest in this repo:
 
-    $ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-os-edge.git
+    $ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-edge.git
 
 Your directory should now contain a .repo directory.
 
@@ -56,8 +56,8 @@ Manual Steps:
           i.  This reconfigures Ubuntu/Debian to use bash as the non-interactive shell.  At the prompt, select No.
     c. run bitbake
     $ cd poky
-    $ TEMPLATECONF=meta-pelion-os-edge/conf source oe-init-build-env
-    $ cp <path_to_file>/mbed_cloud_dev_credentials.c meta-pelion-os-edge/recipes-wigwag/mbed-edge-core/files/
+    $ TEMPLATECONF=meta-pelion-edge/conf source oe-init-build-env
+    $ cp <path_to_file>/mbed_cloud_dev_credentials.c meta-pelion-edge/recipes-wigwag/mbed-edge-core/files/
     $ bitbake console-image
 
 With Docker and Make:
@@ -87,4 +87,4 @@ To flash on Linux, use dd.  You can use `lsblk` to find out the name of your SD 
 
 Troubleshooting
 ---------------
-1. See the build-pelion-os-edge [README](https://github.com/armpelionedge/build-pelion-os-edge/blob/master/README.md) for solutions to some common build errors.
+1. See the build-pelion-edge [README](https://github.com/armpelionedge/build-pelion-edge/blob/master/README.md) for solutions to some common build errors.
