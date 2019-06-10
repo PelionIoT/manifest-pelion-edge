@@ -17,28 +17,28 @@
     <!-- yocto core -->
     <project name="poky"
         path="poky"
-        revision="thud"
+        revision="refs/tags/warrior-21.0.0"
         remote="yocto" />
 
     <project name="meta-openembedded"
         path="poky/meta-openembedded"
-        revision="thud"
+        revision="warrior"
         remote="oe" />
 
     <project name="meta-virtualization"
         path="poky/meta-virtualization"
-        revision="thud"
+        revision="warrior"
         remote="yocto" />
 
     <project name="meta-security"
         path="poky/meta-security"
-        revision="thud"
+        revision="mut"
         remote="yocto" />
 
     <!-- bsps -->
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
-        revision="thud"
+        revision="warrior"
         remote="yocto" />
 
     <project name="armmbed/meta-mbl"
@@ -50,12 +50,13 @@
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
+        revision="warrior"
         remote="github" />
 
     <project name="openembedded/meta-linaro"
         path="poky/meta-linaro"
         remote="linaro"
-        revision="thud" />
+        revision="warrior" />
 
     <project name="aaronovz1/meta-nodejs"
         path="poky/meta-nodejs"
