@@ -12,55 +12,56 @@
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
         path="build-env"
+        revision="refs/tags/2.0.0-rc1"
         remote="github" />
 
     <!-- yocto core -->
     <project name="poky"
         path="poky"
-        revision="thud"
+        revision="a358cc20104a554d1336fdb80bf39fe8603527ef"
         remote="yocto" />
 
     <project name="meta-openembedded"
         path="poky/meta-openembedded"
-        revision="thud"
+        revision="9b3b907f30b0d5b92d58c7e68289184fda733d3e"
         remote="oe" />
 
     <project name="meta-virtualization"
         path="poky/meta-virtualization"
-        revision="thud"
+        revision="bbc38dc9d6d02e73c08df289bb22a292c2264e9b"
         remote="yocto" />
 
     <project name="meta-security"
         path="poky/meta-security"
-        revision="thud"
+        revision="31dc4e7532fa7a82060e0b50e5eb8d0414aa7e93"
         remote="yocto" />
 
     <!-- bsps -->
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
-        revision="thud"
+        revision="c71d79efc5a06a0c896c278c94f5b14413bb4d69"
         remote="yocto" />
 
     <project name="armmbed/meta-mbl"
         path="poky/meta-mbl"
-        remote="github"
-        revision="thud-gateway-bsp" />
+        revision="0288e6b6d13fef9fdad332ca65e17722cf5d9f12"
+        remote="github" />
     <!-- distros -->
 
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="2.0.0-rc1"
+        revision="refs/tags/2.0.0-rc1"
         remote="github" />
 
     <project name="openembedded/meta-linaro"
         path="poky/meta-linaro"
-        remote="linaro"
-        revision="thud" />
+        revision="b30036d4ef7ce9fe746833fc54de6ac7b0e00638"
+        remote="linaro" />
 
     <project name="aaronovz1/meta-nodejs"
         path="poky/meta-nodejs"
-        revision="pyro"
+        revision="221e63d5dd89e4bcbd81b097947db68e0584a936"
         remote="github" />
 
 </manifest>
