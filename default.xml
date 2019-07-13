@@ -36,15 +36,20 @@
         remote="yocto" />
 
     <!-- bsps -->
-    <project name="meta-raspberrypi"
-        path="poky/meta-raspberrypi"
+    <project name="meta-freescale"
+        path="poky/meta-freescale"
         revision="warrior"
         remote="yocto" />
+
+    <project name="Freescale/meta-freescale-3rdparty"
+        path="poky/meta-freescale-3rdparty"
+        revision="warrior"
+        remote="github" />
 
     <project name="armmbed/meta-mbl"
         path="poky/meta-mbl"
         remote="github"
-        revision="thud-gateway-bsp" />
+        revision="warrior-dev+imx6ul-des0258-mbl" />
     <!-- distros -->
 
     <!-- software -->
