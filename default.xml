@@ -50,7 +50,7 @@
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="warrior"
+        revision="dev"
         remote="github" />
 
     <project name="openembedded/meta-linaro"
