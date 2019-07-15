@@ -12,7 +12,7 @@
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
         path="build-env"
-        revision="refs/tags/2.0.0-rc1"
+        revision="ble_pt"
         remote="github" />
 
     <!-- yocto core -->
@@ -51,7 +51,7 @@
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="refs/tags/2.0.0-rc1"
+        revision="ble_pt"
         remote="github" />
 
     <project name="openembedded/meta-linaro"
