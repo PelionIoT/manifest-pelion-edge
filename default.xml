@@ -12,6 +12,7 @@
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
         path="build-env"
+        revision="trav_dev_ep0258"
         remote="github" />
 
     <!-- yocto core -->
