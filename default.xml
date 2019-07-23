@@ -39,7 +39,7 @@
     <project name="meta-freescale"
         path="poky/meta-freescale"
         revision="warrior"
- 	remote="github" />
+ 	    remote="yocto" />
 
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
