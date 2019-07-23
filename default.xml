@@ -12,7 +12,6 @@
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
         path="build-env"
-        revision="trav_dev_ep0258"
         remote="github" />
 
     <!-- yocto core -->
@@ -61,7 +60,7 @@
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="dev_trav"
+        revision="trav_dev_ep0258"
         remote="github" />
 
     <project name="openembedded/meta-linaro"
