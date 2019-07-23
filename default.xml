@@ -54,7 +54,7 @@
     <project name="armmbed/meta-mbl"
         path="poky/meta-mbl"
         remote="github"
-        revision="thud-gateway-bsp" />
+        revision="warrior-dev" />
     <!-- distros -->
 
     <!-- software -->
