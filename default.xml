@@ -54,7 +54,7 @@
     <project name="armmbed/meta-mbl"
         path="poky/meta-mbl"
         remote="github"
-        revision="warrior-dev" />
+        revision="warrior-dev+imx6ul-des0258-mbl" />
     <!-- distros -->
 
     <!-- software -->
