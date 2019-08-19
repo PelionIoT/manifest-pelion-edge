@@ -1,90 +1,129 @@
-Repo manifest for Pelion Edge
-=============================================
-This repository provides Repo manifests to setup the Yocto build system for the Pelion Edge.
+# Repository manifest for Pelion Edge
 
-Quickstart
-----------
-    $ mkdir build; cd build
-    $ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-edge.git -b <branch>
-    $ repo sync -j8
-    $ cd build-env
-    $ cp <path_to_file>/mbed_cloud_dev_credentials.c .
-    $ make
+This repository provides repository manifests to set up the Yocto build system for Pelion Edge.
 
-Getting Started
----------------
-**1.  Install Repo.**
+## Quickstart
 
-Download the Repo script:
+```
+$ mkdir build; cd build
+$ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-edge.git -b <branch>
+$ repo sync -j8
+$ cd build-env
+$ cp <path_to_file>/mbed_cloud_dev_credentials.c .
+$ make
+```
 
-    $ mkdir ~/bin
-    $ PATH=~/bin:${PATH}
-    $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-    $ chmod a+x ~/bin/repo
+## Detailed steps
 
-**2.  Initialize a Repo client.**
+1. Install the repository.
 
-Create an empty directory to hold the build directory:
+   Download the repository script:
+   
+   ```
+   $ mkdir ~/bin
+   $ PATH=~/bin:${PATH}
+   $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+   $ chmod a+x ~/bin/repo
+   ```
+   
+1. Initialize a repository client:
+   
+   1. Create an empty directory to hold the build directory:
+      
+      ```
+      $ mkdir build
+      $ cd build
+      ```
+   
+   1. Download the manifest in this repository:
+      
+      ```
+      $ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-edge.git
+      ```
+   
+   Your directory now contains a `.repo` directory.
 
-    $ mkdir build
-    $ cd build
+1. Fetch all the repositories:
 
-Tell Repo to download the manifest in this repo:
+   ```
+   $ repo sync -j8
+   ```
+   
+1. Create and copy the [following certificates](https://github.com/armPelionEdge/meta-pelion-edge/blob/dev/BUILD.md#credentials-keys-and-certificates) to the `build-env` directory:
 
-    $ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-edge.git
+   1. `mbed_cloud_dev_credentials.c` – Used to connect to your Pelion account. Create a developer certificate in the [Portal](https://portal.mbedcloud.com/) under **Device Identity** > **Certificates**, and download the C file.
+   1. `Update_default_resources.c` – Used to authorize firmware updates to device and created by [initializing the manifest tool](https://github.com/ARMmbed/manifest-tool/blob/master/README.md#quick-start).
+   1. `upgradeCA.cert` – [Created with OpenSSL](https://github.com/armPelionEdge/meta-pelion-edge/blob/dev/BUILD.md#upgrade-ca-certificate).
+   1. `rot_key.pem` – [Created with OpenSSL](https://github.com/armPelionEdge/meta-pelion-edge/blob/dev/BUILD.md#secure-boot-trusted-world-root-of-trust).
+   1. `mbl-fit-rot-key.key` – [Created with OpenSSL](https://github.com/armPelionEdge/meta-pelion-edge/blob/dev/BUILD.md#u-boot-verified-boot-fit-image-signing-key-and-certificate).
+   1. `mbl-fit-rot-key.crt` – [Created with OpenSSL](https://github.com/armPelionEdge/meta-pelion-edge/blob/dev/BUILD.md#u-boot-verified-boot-fit-image-signing-key-and-certificate).
 
-Your directory should now contain a .repo directory.
+   The Make file puts these certificates in the correct spots for the build as long as they are in `build-env`.
 
-**3.  Fetch all the repositories:**
+1. Start the build with `make`:
+   
+   ```
+   $ make
+   ```
+   
+1. When it fails due to the private repository (mbedtls-psa / crypto), access the docker bash shell, and apply the following patch:
 
-    $ repo sync -j8
+   ```
+   $ make bash
+   ```
+   
+   This gives you access to the bash shell in the docker build.
 
-**5.  Build an image:**
+   1. Edit the following:
 
-There are two ways to build the image depending on how much manual effort and time you want to invest: 1. by manually setting up your host environment for Yocto and calling the usual bitbake commands, or 2. installing Docker and using the included Makefile which loads a Docker image and runs bitbake inside the Docker image.  Beyond the automation, an additional benefit of 2 is that the Docker image contains a known working host environment with all the necessary build tools preinstalled.
+      ```
+      $ vi poky/meta-pelion-edge/recipes-wigwag/mbed-edge-examples/mbed-edge-examples.bb
+      ```
+   
+      1. Change the version: SRCREV = "0.9.0"
+      1. Remove this file reference: file://0003-examples-0.8.0-should-use-mbed-edge-0.8.0.patch
+  
+   1. Edit the following: 
+   
+      ```
+      $ vi ~/poky/meta-pelion-edge/recipes-wigwag/mbed-edge-core/mbed-edge-core.inc
+      ```
+      
+      1. Change the version: SRCREV = "0.9.0"
+      1. Remove this file reference: file://0003-fix-compile-error-when-building-for-Release.patch
+   
+   1. Clean the state of the module with bitbake:
+   
+      ```
+      $ source ~/poky/oe-init-build-env
+      $ bitbake -c cleansstate mbed-edge-core-rpi3
+      $ exit
+      ```
 
-There's no magic in the Docker image or the Makefile, rather it implements a known working environment and scripted set of build steps to produce a viable firmware image.  The Makefile still calls bitbake to perform the build, it just does so inside the Docker container.
+1. After you return to your normal shell, you can complete the build by executing `make`:
+   
+   ```
+   $ make
+   ```
 
-Manual Steps:
+1. Flash your image:
 
-    a. [Install Yocto system requirements](https://www.yoctoproject.org/docs/2.6.1/ref-manual/ref-manual.html#ref-manual-system-requirements)
-    b. [Install additional requirements]
-       1. sudo dpkg --add-architecture i386
-       2. sudo apt-get update
-       3. sudo apt-get install -y --no-install-recommends g++-multilib libssl-dev:i386 libcrypto++-dev:i386 zlib1g-dev:i386
-       4. sudo dpkg-reconfigure dash
-          i.  This reconfigures Ubuntu/Debian to use bash as the non-interactive shell.  At the prompt, select No.
-    c. run bitbake
-    $ cd poky
-    $ TEMPLATECONF=meta-pelion-edge/conf source oe-init-build-env
-    $ cp <path_to_file>/mbed_cloud_dev_credentials.c meta-pelion-edge/recipes-wigwag/mbed-edge-core/files/
-    $ bitbake console-image
+   To flash console-image-raspberry3.wic:
+   
+   - To flash on macOS, use `dd`. This example assumes the SD card is enumerated as `/dev/diskX`, and you should verify your device's path:
+   
+      ```
+      $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4m of=/dev/diskX iflag=fullblock oflag=direct conv=fsync status=progress
+      ```
+      
+      Note: Alternatively, you can use the [Etcher](https://www.balena.io/etcher/) application. (The UI is self explanatory: Choose the file to flash and the destination SD card, and then click **Flash**.) In some cases, using Etcher results in significant time savings over using `dd`.
+      
+   - To flash on Linux, use `dd`. You can use `lsblk` to find the name of your SD card block device:
+   
+      ```
+      $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4M of=/dev/mmcblkX conv=sync
+      ```
 
-With Docker and Make:
+## Troubleshooting
 
-    a. [Install Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-    b. run make
-    $ cd build-env
-    $ cp <path_to_file>/mbed_cloud_dev_credentials.c .
-    $ make
-
-The built image will be located in the build directory (`build` in this example), under `poky/build/tmp/deploy/images/raspberrypi3/`. The file name will be `console-image-raspberry3.SOMETHING` (the ending will vary based on the value of IMAGE_FSTYPES in your local.conf).
-
-**6. Flash your image:**
-
-To flash console-image-raspberry3.wic:
-
-To flash on Mac OS X, use dd.  This example assumes the SD card is enumerated as /dev/diskX and you should verify your device's path.
-
-        $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4m of=/dev/diskX iflag=fullblock oflag=direct conv=fsync status=progress
-
-Alternatively, you can use the [Etcher](https://www.balena.io/etcher/) app (the UI is self explanatory - simply choose the file to flash, the destination SD card, and then click Flash). In some cases, using Etcher results in significant time savings over using dd.
-
-To flash on Linux, use dd.  You can use `lsblk` to find out the name of your SD card block device.
-
-        $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4M of=/dev/mmcblkX conv=sync
-
-
-Troubleshooting
----------------
-1. See the build-pelion-edge [README](https://github.com/armpelionedge/build-pelion-edge/blob/master/README.md) for solutions to some common build errors.
+Please see the `build-pelion-edge` [README](https://github.com/armpelionedge/build-pelion-edge/blob/master/README.md) for solutions to common build errors.
