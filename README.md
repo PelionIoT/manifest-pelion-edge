@@ -116,7 +116,7 @@ $ make
       $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4m of=/dev/diskX iflag=fullblock oflag=direct conv=fsync status=progress
       ```
       
-      Note: Alternatively, you can use the [Etcher](https://www.balena.io/etcher/) application. (The UI is self explanatory: Choose the file to flash and the destination SD card, and then click **Flash**.) In some cases, using Etcher results in significant time savings over using `dd`.
+      Note: To use on Windows, you can use the [Etcher](https://www.balena.io/etcher/) application. (The UI is self explanatory: Choose the file to flash and the destination SD card, and then click **Flash**.) In some cases, using Etcher results in significant time savings over using `dd`.
       
    - To flash on Linux, use `dd`. You can use `lsblk` to find the name of your SD card block device:
    
