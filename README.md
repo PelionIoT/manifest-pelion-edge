@@ -2,6 +2,13 @@
 
 This repository provides repository manifests to set up the Yocto build system for Pelion Edge.
 
+## Requirements
+
+- Ubuntu 18.04.
+- [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
+- [build-essential](https://askubuntu.com/questions/398489/how-to-install-build-essential).
+- Be sure your user is added to the Docker group.
+
 ## Quickstart
 
 ```
@@ -9,7 +16,7 @@ $ mkdir build; cd build
 $ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-edge.git -b <branch>
 $ repo sync -j8
 $ cd build-env
-$ cp <path_to_file>/mbed_cloud_dev_credentials.c .
+$ cp <needed credentials>. #See Step 4 below for creation.
 $ make
 ```
 
