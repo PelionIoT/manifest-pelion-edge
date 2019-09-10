@@ -12,6 +12,7 @@
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
         path="build-env"
+        revision="refs/tags/2.0.0-rc1"
         remote="github" />
 
     <!-- yocto core -->
@@ -22,45 +23,45 @@
 
     <project name="meta-openembedded"
         path="poky/meta-openembedded"
-        revision="warrior"
+        revision="6fa72d587aab8e9d56d67a2552eb9cfbe25c86d2"
         remote="oe" />
 
     <project name="meta-virtualization"
         path="poky/meta-virtualization"
-        revision="warrior"
+        revision="2c6f451aa2b954c0cab2052d4f4635618050f648"
         remote="yocto" />
 
     <project name="meta-security"
         path="poky/meta-security"
-        revision="mut"
+        revision="7c08edc7f5d3a1e4c4552509b907baf9cadb279a"
         remote="yocto" />
 
     <!-- bsps -->
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
-        revision="warrior"
+        revision="7059c374512f1c1c0df9ecab0703d11438bdf78b"
         remote="yocto" />
 
     <project name="armmbed/meta-mbl"
         path="poky/meta-mbl"
         remote="github"
-        revision="warrior-dev" />
+        revision="5faaa898ff501d597595a1c6f9ed8a02d0ae8f31" />
     <!-- distros -->
 
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="dev"
+        revision="refs/tags/2.0.0-rc1"
         remote="github" />
 
     <project name="openembedded/meta-linaro"
         path="poky/meta-linaro"
         remote="linaro"
-        revision="warrior" />
+        revision="c38fb78fd1eb3883f2a8199c2d21358f4a412fb4" />
 
     <project name="aaronovz1/meta-nodejs"
         path="poky/meta-nodejs"
-        revision="pyro"
+        revision="221e63d5dd89e4bcbd81b097947db68e0584a936"
         remote="github" />
 
 </manifest>
