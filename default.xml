@@ -45,13 +45,13 @@
     <project name="armmbed/meta-mbl"
         path="poky/meta-mbl"
         remote="github"
-        revision="5faaa898ff501d597595a1c6f9ed8a02d0ae8f31" />
+        revision="a8a154974528f58c81e17f90dd21eac94b124dfb" />
     <!-- distros -->
 
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="refs/tags/2.0.0-rc1"
+        revision="refs/tags/2.0.0-rc2"
         remote="github" />
 
     <project name="openembedded/meta-linaro"
