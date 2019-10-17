@@ -11,7 +11,7 @@
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
         path="build-env"
-        revision="refs/head/mvp1_ble"
+        revision="refs/heads/mvp1_ble"
         remote="github" />
 
     <!-- yocto core -->
@@ -46,7 +46,7 @@
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="refs/head/mvp1_ble"
+        revision="refs/heads/mvp1_ble"
         remote="github" />
 
     <project name="aaronovz1/meta-nodejs"
