@@ -24,7 +24,7 @@ $ make
 
 1. Install the repository.
 
-   Download the repository script:
+   Download the `repo` tool:
    
    ```
    $ mkdir ~/bin
