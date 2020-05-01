@@ -17,7 +17,7 @@
     <!-- yocto core -->
     <project name="poky"
         path="poky"
-        revision="refs/tags/warrior-21.0.0"
+        revision="refs/tags/thud-20.0.2"
         remote="yocto" />
 
     <project name="meta-openembedded"
