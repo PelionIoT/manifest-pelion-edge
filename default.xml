@@ -22,23 +22,23 @@
 
     <project name="meta-openembedded"
         path="poky/meta-openembedded"
-        revision="warrior"
+        revision="4cd3a39f22a2712bfa8fc657d09fe2c7765a4005"
         remote="oe" />
 
     <project name="meta-virtualization"
         path="poky/meta-virtualization"
-        revision="warrior"
+        revision="9b568b6ae1bf1bebcb9552703ee40f9b880e07ed"
         remote="yocto" />
 
     <project name="meta-security"
         path="poky/meta-security"
-        revision="mut"
+        revision="31dc4e7532fa7a82060e0b50e5eb8d0414aa7e93"
         remote="yocto" />
 
     <!-- bsps -->
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
-        revision="warrior"
+        revision="c71d79efc5a06a0c896c278c94f5b14413bb4d69"
         remote="yocto" />
 
     <!-- software -->
@@ -49,7 +49,7 @@
 
     <project name="aaronovz1/meta-nodejs"
         path="poky/meta-nodejs"
-        revision="pyro"
+        revision="5401bb427680ad483cf094d7ce7264f1c4128800"
         remote="github" />
 
 </manifest>
