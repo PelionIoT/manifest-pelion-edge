@@ -7,11 +7,11 @@
     <remote name="github" fetch="ssh://git@github.com/" />
     <remote name="yocto" fetch="git://git.yoctoproject.org" />
     <remote name="oe" fetch="git://git.openembedded.org" />
-    <remote name="linaro" fetch="http://git.linaro.org" />
 
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
         path="build-env"
+        revision="refs/tags/1.0.0"
         remote="github" />
 
     <!-- yocto core -->
@@ -41,22 +41,11 @@
         revision="warrior"
         remote="yocto" />
 
-    <project name="armmbed/meta-mbl"
-        path="poky/meta-mbl"
-        remote="github"
-        revision="warrior-dev" />
-    <!-- distros -->
-
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="dev"
+        revision="yash_dev"
         remote="github" />
-
-    <project name="openembedded/meta-linaro"
-        path="poky/meta-linaro"
-        remote="linaro"
-        revision="warrior" />
 
     <project name="aaronovz1/meta-nodejs"
         path="poky/meta-nodejs"
