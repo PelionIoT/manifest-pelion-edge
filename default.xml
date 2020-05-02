@@ -7,7 +7,6 @@
     <remote name="github" fetch="ssh://git@github.com/" />
     <remote name="yocto" fetch="git://git.yoctoproject.org" />
     <remote name="oe" fetch="git://git.openembedded.org" />
-    <remote name="linaro" fetch="http://git.linaro.org" />
 
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
@@ -17,17 +16,17 @@
     <!-- yocto core -->
     <project name="poky"
         path="poky"
-        revision="refs/tags/warrior-21.0.0"
+        revision="refs/tags/thud-20.0.2"
         remote="yocto" />
 
     <project name="meta-openembedded"
         path="poky/meta-openembedded"
-        revision="warrior"
+        revision="thud"
         remote="oe" />
 
     <project name="meta-virtualization"
         path="poky/meta-virtualization"
-        revision="warrior"
+        revision="thud"
         remote="yocto" />
 
     <project name="meta-security"
@@ -38,25 +37,14 @@
     <!-- bsps -->
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
-        revision="warrior"
+        revision="thud"
         remote="yocto" />
-
-    <project name="armmbed/meta-mbl"
-        path="poky/meta-mbl"
-        remote="github"
-        revision="warrior-dev" />
-    <!-- distros -->
 
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
         revision="dev"
         remote="github" />
-
-    <project name="openembedded/meta-linaro"
-        path="poky/meta-linaro"
-        remote="linaro"
-        revision="warrior" />
 
     <project name="aaronovz1/meta-nodejs"
         path="poky/meta-nodejs"
