@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
     <!-- defaults for entries that haven't specified all required fields-->
-    <default revision="dev" />
+    <default revision="2.0.0-rc1" />
 
     <!-- remotes -->
     <remote name="github" fetch="ssh://git@github.com/" />
