@@ -31,7 +31,7 @@
 
     <project name="meta-security"
         path="poky/meta-security"
-        revision="mut"
+        revision="thud"
         remote="yocto" />
 
     <!-- bsps -->
