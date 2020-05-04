@@ -9,12 +9,14 @@ This repository provides repository manifests to set up the Yocto build system f
 - [build-essential](https://askubuntu.com/questions/398489/how-to-install-build-essential).
 - Be sure your user is added to the Docker group.
 - [repo](https://www.howtoinstall.me/ubuntu/18-04/repo/)
-- As `repo` tool is built on top of Git, you will have to configure git user.name and user.email
-```
-$ git config --global user.name "Mona Lisa"
-$ git config --global user.email "email@example.com"
-```
-- As the recipes of various meta layers refer to git@github.com, it is essential that your build machine's SSH key is saved in your GitHub account. Follow these [instructions](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on how to generate SSH key and add to Github account.
+- Because the `repo` tool is built on top of Git, you must configure `user.name` and `user.email`:
+
+   ```
+   $ git config --global user.name "Mona Lisa"
+   $ git config --global user.email "email@example.com"
+   ```
+
+- As the recipes of various meta layers refer to git@github.com, it is essential your build machine's SSH key is saved in your GitHub account. Follow these [instructions](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on how to generate SSH key and add to Github account.
 
 ## Quickstart
 
