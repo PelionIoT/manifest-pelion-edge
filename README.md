@@ -85,6 +85,10 @@ $ make
 
    Follow these [instructions](https://github.com/armPelionEdge/meta-pelion-edge/blob/master/FLASH.md).
 
+1. Login credentials:
+
+   There is only one login user by default, root. The default password is set to 'redmbed'. If you wish to modify that then follow these [instructions](https://github.com/armPelionEdge/meta-pelion-edge/blob/master/BUILD.md#root-password).
+
 ## Troubleshooting
 Please see the meta-pelion-edge [GitHub issues](https://github.com/armPelionEdge/meta-pelion-edge/issues) for solutions to common build errors.
 
