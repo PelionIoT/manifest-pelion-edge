@@ -1,6 +1,6 @@
 # Repository manifest for Pelion Edge
 
-This repository provides repository manifests to set up the Yocto build system for Pelion Edge. Please make all contributions against our development branch, `dev`. Merged changes will then be pulled into master.
+This repository provides repository manifests to set up the Yocto build system for Pelion Edge. The steps helps you generate a Pelion Edge enabled Yocto image in developer mode.
 
 ## Requirements
 
@@ -10,6 +10,10 @@ This repository provides repository manifests to set up the Yocto build system f
 - Be sure your user is added to the Docker group.
 - [repo](https://source.android.com/setup/build/downloading#installing-repo)
 - As the recipes of various meta layers refer to git@github.com, it is essential your build machine's SSH key is saved in your GitHub account. Follow these [instructions](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on how to generate SSH key and add to Github account.
+- `mbed_cloud_dev_credentials.c` – Used to connect to your Pelion account. Create a developer certificate in the [Portal](https://portal.mbedcloud.com/) under **Device Identity** > **Certificates**, and download the C file.
+- `update_default_resources.c` – Used to authorize firmware updates to device and created by [initializing the manifest tool](https://github.com/ARMmbed/manifest-tool/blob/master/README.md#quick-start).
+
+Note: To unlock the rich node features, such as gateway logs and gateway terminal in the Pelion web portal, please pass the command line parameter `-V 42fa7b48-1a65-43aa-890f-8c704daade54` to manifest-tool while generating the update_default_resources.c.
 
 ## Quickstart
 
@@ -18,7 +22,8 @@ $ mkdir build; cd build
 $ repo init -u ssh://git@github.com/armpelionedge/manifest-pelion-edge.git -b <branch>
 $ repo sync -j8
 $ cd build-env
-$ cp <needed credentials>. #See Step 4 below for creation.
+$ cp ../../mbed_cloud_dev_credentials.c . # Copy the above generated certificates to build-env directory
+$ cp ../../update_default_resources.c .
 $ make
 ```
 
@@ -64,10 +69,7 @@ $ make
    $ repo sync -j8
    ```
 
-1. Create and copy the [following certificates](https://github.com/armPelionEdge/meta-pelion-edge/blob/dev/BUILD.md#credentials-keys-and-certificates) to the `build-env` directory:
-
-   1. `mbed_cloud_dev_credentials.c` – Used to connect to your Pelion account. Create a developer certificate in the [Portal](https://portal.mbedcloud.com/) under **Device Identity** > **Certificates**, and download the C file.
-   1. `Update_default_resources.c` – Used to authorize firmware updates to device and created by [initializing the manifest tool](https://github.com/ARMmbed/manifest-tool/blob/master/README.md#quick-start).
+1. Copy the `mbed_cloud_dev_credentials.c` and `update_default_resources.c` to the `build-env` directory:
 
    The Make file puts these certificates in the correct spots for the build as long as they are in `build-env`.
 
@@ -77,64 +79,14 @@ $ make
    $ make
    ```
 
-1. When it fails due to the private repository (mbedtls-psa / crypto), access the docker bash shell, and apply the following patch:
-
-   ```
-   $ make bash
-   ```
-
-   This gives you access to the bash shell in the docker build.
-
-   1. Edit the following:
-
-      ```
-      $ vi poky/meta-pelion-edge/recipes-wigwag/mbed-edge-examples/mbed-edge-examples.bb
-      ```
-
-      1. Change the version: SRCREV = "0.9.0"
-      1. Remove this file reference: file://0003-examples-0.8.0-should-use-mbed-edge-0.8.0.patch
-
-   1. Edit the following:
-
-      ```
-      $ vi ~/poky/meta-pelion-edge/recipes-wigwag/mbed-edge-core/mbed-edge-core.inc
-      ```
-
-      1. Change the version: SRCREV = "0.9.0"
-      1. Remove this file reference: file://0003-fix-compile-error-when-building-for-Release.patch
-
-   1. Clean the state of the module with bitbake:
-
-      ```
-      $ source ~/poky/oe-init-build-env
-      $ bitbake -c cleansstate mbed-edge-core-rpi3
-      $ exit
-      ```
-
-1. After you return to your normal shell, you can complete the build by executing `make`:
-
-   ```
-   $ make
-   ```
+   Once it successfully completes, the built image will be located in the build directory under `poky/build/tmp/deploy/images/raspberrypi3/`
 
 1. Flash your image:
 
-   To flash console-image-raspberry3.wic:
-
-   - To flash on macOS, use `dd`. This example assumes the SD card is enumerated as `/dev/diskX`, and you should verify your device's path:
-
-      ```
-      $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4m of=/dev/diskX iflag=fullblock oflag=direct conv=fsync status=progress
-      ```
-
-      Note: To use on Windows, you can use the [Etcher](https://www.balena.io/etcher/) application. (The UI is self explanatory: Choose the file to flash and the destination SD card, and then click **Flash**.) In some cases, using Etcher results in significant time savings over using `dd`.
-
-   - To flash on Linux, use `dd`. You can use `lsblk` to find the name of your SD card block device:
-
-      ```
-      $ gunzip -c console-image-raspberrypi3.rootfs.wic.gz | sudo dd bs=4M of=/dev/mmcblkX conv=sync
-      ```
+   Follow these [instructions](https://github.com/armPelionEdge/meta-pelion-edge/blob/master/FLASH.md).
 
 ## Troubleshooting
+Please see the meta-pelion-edge [GitHub issues](https://github.com/armPelionEdge/meta-pelion-edge/issues) for solutions to common build errors.
 
-Please see the `build-pelion-edge` [README](https://github.com/armpelionedge/build-pelion-edge/blob/master/README.md) for solutions to common build errors.
+## Contributing
+Please make all contributions against our development branch, `dev`. Merged changes will then be pulled into master.
