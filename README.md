@@ -30,9 +30,10 @@ Before you can begin using this repository, you must:
 
 1. [Initialize the manifest tool](https://github.com/ARMmbed/manifest-tool/blob/master/README.md#quick-start) to create `update_default_resources.c`. This authorizes firmware updates to the device.
 
-Note: To unlock the rich node features, such as gateway logs and the gateway terminal in the Pelion web Portal, you will have to do the following -
-   * Pass the command line parameter `-V 42fa7b48-1a65-43aa-890f-8c704daade54` to the manifest-tool while generating `update_default_resources.c`, and
-   * Also by default the features are not enabled in your Pelion web Portal account. Please reach out to service continuity team at ARM to request them to enable Edge Gateway features in your account.
+Note: To unlock the rich node features, such as gateway logs and the gateway terminal in the Pelion web Portal:
+
+   - Pass the command-line parameter `-V 42fa7b48-1a65-43aa-890f-8c704daade54` to the manifest-tool while generating `update_default_resources.c`.
+   - Contact the service continuity team at Arm to request they enable Edge gateway features in your Pelion web Portal account. By default, the features are not enabled.
 
 ## Quick start
 
