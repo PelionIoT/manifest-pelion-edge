@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <!-- defaults for entries that haven't specified all required fields-->
-    <default revision="1.0.0" />
 
     <!-- remotes -->
     <remote name="github" fetch="ssh://git@github.com/" />
@@ -11,7 +9,7 @@
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
         path="build-env"
-        revision="refs/tags/1.0.0"
+        revision="refs/tags/2.0.0"
         remote="github" />
 
     <!-- yocto core -->
@@ -22,12 +20,12 @@
 
     <project name="meta-openembedded"
         path="poky/meta-openembedded"
-        revision="4cd3a39f22a2712bfa8fc657d09fe2c7765a4005"
+        revision="446bd615fd7cb9bc7a159fe5c2019ed08d1a7a93"
         remote="oe" />
 
     <project name="meta-virtualization"
         path="poky/meta-virtualization"
-        revision="9b568b6ae1bf1bebcb9552703ee40f9b880e07ed"
+        revision="7685c7d415e0002c448007960837ae8898cd57a5"
         remote="yocto" />
 
     <project name="meta-security"
@@ -38,19 +36,18 @@
     <!-- bsps -->
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
-        revision="c71d79efc5a06a0c896c278c94f5b14413bb4d69"
+        revision="4e5be97d75668804694412f9b86e9291edb38b9d"
         remote="yocto" />
-
-    <!-- distros -->
 
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="refs/tags/1.0.2"
+        revision="refs/tags/2.0.0"
         remote="github" />
 
     <project name="aaronovz1/meta-nodejs"
         path="poky/meta-nodejs"
-        revision="5401bb427680ad483cf094d7ce7264f1c4128800"
+        revision="221e63d5dd89e4bcbd81b097947db68e0584a936"
         remote="github" />
+
 </manifest>
