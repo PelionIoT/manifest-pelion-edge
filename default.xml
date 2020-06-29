@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <!-- defaults for entries that haven't specified all required fields-->
-    <default revision="dev" />
 
     <!-- remotes -->
     <remote name="github" fetch="ssh://git@github.com/" />
@@ -11,6 +9,7 @@
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
         path="build-env"
+        revision="refs/tags/2.0.0"
         remote="github" />
 
     <!-- yocto core -->
@@ -43,6 +42,7 @@
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
+        revision="refs/tags/2.0.0"
         remote="github" />
 
     <project name="aaronovz1/meta-nodejs"
