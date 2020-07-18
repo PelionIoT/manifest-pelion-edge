@@ -9,7 +9,7 @@
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
         path="build-env"
-        revision="refs/tags/2.0.0"
+        revision="4e127be73f8adfaaf42bfdac3ac18fcb4dd49aa1"
         remote="github" />
 
     <!-- yocto core -->
@@ -42,7 +42,7 @@
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="refs/tags/2.0.0"
+        revision="a42334095e2faab446f520c31d221e88f0002402"
         remote="github" />
 
     <project name="aaronovz1/meta-nodejs"
