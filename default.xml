@@ -9,7 +9,7 @@
     <!-- build scripts -->
     <project name="armpelionedge/build-pelion-edge"
         path="build-env"
-        revision="4e127be73f8adfaaf42bfdac3ac18fcb4dd49aa1"
+        revision="refs/tags/2.0.0"
         remote="github" />
 
     <!-- yocto core -->
