@@ -2,7 +2,7 @@
 <manifest>
 
     <!-- remotes -->
-    <remote name="github" fetch="ssh://git@github.com/" />
+    <remote name="github" fetch="https://github.com/" />
     <remote name="yocto" fetch="git://git.yoctoproject.org" />
     <remote name="oe" fetch="git://git.openembedded.org" />
 
@@ -42,7 +42,7 @@
     <!-- software -->
     <project name="armpelionedge/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="refs/tags/2.1.0"
+        revision="2347b70b47322f14097da827d6ed297b3f79abc2"
         remote="github" />
 
     <project name="aaronovz1/meta-nodejs"
