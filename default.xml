@@ -36,7 +36,7 @@
     <!-- bsps -->
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
-        revision="64bd47fe588e1684b1ec49fa01d1e1176d93d697"
+        revision="085fb07e103745ca47cab9bf93195a416b1e83dd"
         remote="yocto" />
 
     <!-- software -->
