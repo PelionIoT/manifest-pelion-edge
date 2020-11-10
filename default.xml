@@ -7,9 +7,9 @@
     <remote name="oe" fetch="git://git.openembedded.org" />
 
     <!-- build scripts -->
-    <project name="armpelionedge/build-pelion-edge"
+    <project name="esajaa/build-pelion-edge"
         path="build-env"
-        revision="refs/tags/2.0.0"
+        revision="2168feb90d79f5a175733cc8b5427d4496cd9dc2"
         remote="github" />
 
     <!-- yocto core -->
