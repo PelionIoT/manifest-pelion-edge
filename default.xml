@@ -7,9 +7,9 @@
     <remote name="oe" fetch="git://git.openembedded.org" />
 
     <!-- build scripts -->
-    <project name="esajaa/build-pelion-edge"
+    <project name="pelioniot/build-pelion-edge"
         path="build-env"
-        revision="2168feb90d79f5a175733cc8b5427d4496cd9dc2"
+        revision="refs/heads/dev"
         remote="github" />
 
     <!-- yocto core -->
@@ -45,9 +45,9 @@
         revision="refs/heads/dev"
         remote="github" />
 
-    <project name="esajaa/meta-mbed-edge"
+    <project name="pelioniot/meta-mbed-edge"
         path="poky/meta-mbed-edge"
-        revision="imx8"
+        revision="refs/heads/dev"
         remote="github" />
 
     <project name="aaronovz1/meta-nodejs"
