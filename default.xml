@@ -7,41 +7,46 @@
     <remote name="oe" fetch="git://git.openembedded.org" />
 
     <!-- build scripts -->
-    <project name="armpelionedge/build-pelion-edge"
+    <project name="pelioniot/build-pelion-edge"
         path="build-env"
-        revision="refs/tags/2.0.0"
+        revision="refs/heads/dev"
         remote="github" />
 
     <!-- yocto core -->
     <project name="poky"
         path="poky"
-        revision="refs/tags/thud-20.0.2"
+        revision="40e448301edf142dc00a0ae6190017adac1e57b2"
         remote="yocto" />
 
     <project name="meta-openembedded"
         path="poky/meta-openembedded"
-        revision="446bd615fd7cb9bc7a159fe5c2019ed08d1a7a93"
+        revision="2a5c534d2b9f01e9c0f39701fccd7fc874945b1c"
         remote="oe" />
 
     <project name="meta-virtualization"
         path="poky/meta-virtualization"
-        revision="7685c7d415e0002c448007960837ae8898cd57a5"
+        revision="65c40e6e57c92200160125a0776d88a64c1bf912"
         remote="yocto" />
 
     <project name="meta-security"
         path="poky/meta-security"
-        revision="31dc4e7532fa7a82060e0b50e5eb8d0414aa7e93"
+        revision="98ff502d4096331e2b8a8e4044860b23bf6f8ea5"
         remote="yocto" />
 
     <!-- bsps -->
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
-        revision="4e5be97d75668804694412f9b86e9291edb38b9d"
+        revision="085fb07e103745ca47cab9bf93195a416b1e83dd"
         remote="yocto" />
 
     <!-- software -->
-    <project name="armpelionedge/meta-pelion-edge"
+    <project name="pelioniot/meta-pelion-edge"
         path="poky/meta-pelion-edge"
+        revision="refs/heads/dev"
+        remote="github" />
+
+    <project name="pelioniot/meta-mbed-edge"
+        path="poky/meta-mbed-edge"
         revision="refs/heads/dev"
         remote="github" />
 
