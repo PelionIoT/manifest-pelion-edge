@@ -15,7 +15,7 @@
     <!-- yocto core -->
     <project name="poky"
         path="poky"
-        revision="40e448301edf142dc00a0ae6190017adac1e57b2"
+        revision="refs/tags/dunfell-23.0.4"
         remote="yocto" />
 
     <project name="meta-openembedded"
