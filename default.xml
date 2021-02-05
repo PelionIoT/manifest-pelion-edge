@@ -9,7 +9,7 @@
     <!-- build scripts -->
     <project name="pelioniot/build-pelion-edge"
         path="build-env"
-        revision="refs/heads/dev"
+        revision="refs/heads/2.2rc5"
         remote="github" />
 
     <!-- yocto core -->
@@ -42,12 +42,12 @@
     <!-- software -->
     <project name="pelioniot/meta-pelion-edge"
         path="poky/meta-pelion-edge"
-        revision="refs/heads/dev"
+        revision="refs/heads/2.2rc5"
         remote="github" />
 
     <project name="pelioniot/meta-mbed-edge"
         path="poky/meta-mbed-edge"
-        revision="refs/heads/dev"
+        revision="refs/heads/2.2rc5"
         remote="github" />
 
 </manifest>
