@@ -3,8 +3,8 @@
 
     <!-- remotes -->
     <remote name="github" fetch="https://github.com/" />
-    <remote name="yocto" fetch="git://git.yoctoproject.org" />
-    <remote name="oe" fetch="git://git.openembedded.org" />
+    <remote name="yocto" fetch="https://git.yoctoproject.org" />
+    <remote name="oe" fetch="https://git.openembedded.org" />
 
     <!-- build scripts -->
     <project name="pelioniot/build-pelion-edge"
