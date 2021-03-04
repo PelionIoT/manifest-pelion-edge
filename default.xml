@@ -39,6 +39,17 @@
         revision="085fb07e103745ca47cab9bf93195a416b1e83dd"
         remote="yocto" />
 
+    <!-- Edge core parsec client deps -->
+    <project name="meta-rust"
+        path="poky/meta-rust"
+        revision="9a035fe27262bb23676da9f9f583e3ee39b0a377"
+        remote="github" />
+
+    <project name="meta-clang"
+        path="poky/meta-clang"
+        revision="f6e8b41b291d69754356a6c4915e5daa1af59de4"
+        remote="github" />
+
     <!-- software -->
     <project name="pelioniot/meta-pelion-edge"
         path="poky/meta-pelion-edge"
