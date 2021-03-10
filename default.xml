@@ -33,6 +33,11 @@
         revision="98ff502d4096331e2b8a8e4044860b23bf6f8ea5"
         remote="yocto" />
 
+    <project name="pelioniot/meta-parsec"
+	path="poky/meta-parsec"
+        revision="refs/heads/dev"
+        remote="github" />
+
     <!-- bsps -->
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
