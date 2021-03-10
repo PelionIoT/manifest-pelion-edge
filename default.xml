@@ -41,7 +41,7 @@
 
     <project name="kraj/meta-clang"
         path="poky/meta-clang"
-        revision="f6e8b41b291d69754356a6c4915e5daa1af59de4"
+        revision="e63d6f9abba5348e2183089d6ef5ea384d7ae8d8"
         remote="github" />
 
     <!-- bsps -->
