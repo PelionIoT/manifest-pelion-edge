@@ -33,6 +33,17 @@
         revision="98ff502d4096331e2b8a8e4044860b23bf6f8ea5"
         remote="yocto" />
 
+    <!-- Edge core parsec client deps -->
+    <project name="meta-rust/meta-rust"
+        path="poky/meta-rust"
+        revision="9a035fe27262bb23676da9f9f583e3ee39b0a377"
+        remote="github" />
+
+    <project name="kraj/meta-clang"
+        path="poky/meta-clang"
+        revision="f6e8b41b291d69754356a6c4915e5daa1af59de4"
+        remote="github" />
+
     <!-- bsps -->
     <project name="meta-raspberrypi"
         path="poky/meta-raspberrypi"
