@@ -30,7 +30,7 @@
 
     <project name="meta-security"
         path="poky/meta-security"
-        revision="98ff502d4096331e2b8a8e4044860b23bf6f8ea5"
+        revision="c74cc97641fd93e0e7a4383255e9a0ab3deaf9d7"
         remote="yocto" />
 
     <project name="pelioniot/meta-parsec"
